@@ -1,5 +1,6 @@
 package personnages;
 public class Village { 
+	
 	private String nom;
 	private Chef chef;
 	private Gaulois[] villageois;
@@ -44,8 +45,6 @@ public class Village {
 		}
 		
 	}
-	
-	
 	
 	
 	public static void main(String[] args) {

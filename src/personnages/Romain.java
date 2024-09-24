@@ -38,4 +38,16 @@ public class Romain {
 	}
 	
 
+	public static void main(String[] args) {
+		Romain minus=new Romain("Minus",6);
+		minus.prendreParole();
+		minus.parler("foutu gaulois");
+		minus.recevoirCoup(4);
+		System.out.println(minus);
+	}
+	
+	
+	
+	
+	
 }
