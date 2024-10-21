@@ -1,10 +1,13 @@
 package personnages;
 
+import gestionVillage.Equipement;
+
 public class Romain {
 	private String nom;
 	private int force;
 	private Equipement[] equipements;
 	private int nbEquipement;
+	private boolean vainqueur;
 
 	public Romain(String nom, int force) { 
 		if (force<0) {
@@ -38,7 +41,6 @@ public class Romain {
 					System.out.println("Equipement casque");
 					resistanceEquipement += 5;
 				}
-
 			}
 			texte = texte+ resistanceEquipement + "!";
 		}
@@ -65,9 +67,7 @@ public class Romain {
 
 	
 //	public void recevoirCoup(int forceCoup) {
-//		if (force<0) {
-//			throw new IllegalArgumentException("Invalid force: " + force);
-//		}
+//		assert(force>=0)
 //		int forceDebut=force;
 //		force -= forceCoup;
 //		if (force > 0) {
@@ -124,7 +124,7 @@ public class Romain {
 	public Equipement[] recevoirCoup(int forceCoup) {
 		Equipement[] equipementEjecte = null;
 		// précondition il a un minimum de force 
-		if (force < 0) {
+		if (force <= 0) {
 			throw new IllegalArgumentException("Invalid force: " + force);
 		}
 		int oldForce = force;
@@ -146,9 +146,20 @@ public class Romain {
 
 		}
 		// post condition la force a diminuée
-		if (force<oldForce ) {
-			throw new IllegalArgumentException("Invalid force: " + force +" par rapport à old force : "+oldForce);
+		if (forceCoup>=oldForce ) {
+			parler("Je resiste au coup ! ");
 		}
+		else {
+			parler ("Aie ! Le coup a réduit ma force");
+		}
+		if (force<=0) {
+			parler("J'abandonne...");
+			vainqueur =false //Il perd
+		}
+		else {
+			vainqueur = true; // Il resiste
+		}
+		
 		return equipementEjecte;
 	}
 

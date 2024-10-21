@@ -1,4 +1,4 @@
-package personnages;
+package gestionVillage;
 
 public enum Equipement {
 	

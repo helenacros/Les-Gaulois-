@@ -1,5 +1,8 @@
 package personnages;
 
+import gestionVillage.Equipement;
+import gestionMusee.Musee;
+
 public class Gaulois {
 	private String nom;
 	private int force;
@@ -44,6 +47,21 @@ public class Gaulois {
 		gaulois.parler("Merci druide, je sens que ma force est "+forcePotion+" fois décuplée");
 	}
 	
+	
+	 public void faireUneDonnation(Musee musee) {
+	        if (nbtrophees > 0) {
+	            System.out.println("Le gaulois " + nom + " : « Je donne au musée tous mes trophées :");
+	            for (int i = 0; i < nbtrophees; i++) {
+	                if (trophees[i] != null) {
+	                    System.out.println("- " + trophees[i]);
+	                    musee.donnerTrophee(this, trophees[i]);
+	                }
+	            }
+	            nbtrophees = 0;
+	        } else {
+	            System.out.println("Le gaulois " + nom + " n'a pas de trophées à donner.");
+	        }
+	    }
 	
 	public static void main(String[] args) {
 		Gaulois asterix=new Gaulois("Asterix",8);

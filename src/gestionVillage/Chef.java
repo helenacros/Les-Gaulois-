@@ -1,4 +1,6 @@
-package personnages;
+package gestionVillage;
+
+import personnages.Romain;
 
 public class Chef { 
 	private String nom;

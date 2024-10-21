@@ -1,8 +1,10 @@
 package histoire;
 
+//import gestionVillage.Equipement;
+import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Romain;
-import personnages.Druide;
+//import villagegaulois.Musee;
 
 public class scenario {
 
@@ -25,7 +27,15 @@ public class scenario {
 		minus.parler("UNE GAU.... UN GAUGAU....");
 			
 		asterix.frapper(minus);
-	
+		
+//		do {
+//			asterix.frapper(minus);
+//		} while (minus.getForce() > 0);
+//		milexcus.parler("UN GAU... UN GAUGAU...");
+//		do {
+//			asterix.frapper(milexcus);
+//		} while (milexcus.getForce() > 0);
+//	
 	}
 
 }
